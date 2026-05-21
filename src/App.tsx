@@ -8,9 +8,11 @@ import ReelPage from './pages/ReelPage'
 import HeadshotsPage from './pages/HeadshotsPage'
 import ContactPage from './pages/ContactPage'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="flex flex-col min-h-screen bg-white">
         <Navigation />
         <main className="flex-grow">
