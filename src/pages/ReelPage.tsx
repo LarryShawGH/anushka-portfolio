@@ -1,4 +1,5 @@
 import { Play } from 'lucide-react'
+import { useState } from 'react'
 
 interface ReelVideo {
   id: string
@@ -50,7 +51,6 @@ const reels: ReelVideo[] = [
 
 export default function ReelPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
-  const [selectedReel, setSelectedReel] = useState<ReelVideo | null>(null)
 
   return (
     <div>
@@ -74,7 +74,6 @@ export default function ReelPage() {
                 key={reel.id}
                 onMouseEnter={() => setHoveredId(reel.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                onClick={() => setSelectedReel(reel)}
                 className="group cursor-pointer"
               >
                 {/* Video Thumbnail */}
@@ -182,5 +181,3 @@ export default function ReelPage() {
     </div>
   )
 }
-
-import { useState } from 'react'
